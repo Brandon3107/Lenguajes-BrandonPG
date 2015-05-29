@@ -13,7 +13,8 @@ public class InterfazImc {
     
     public static void main(String []oso){
         
-        Imc imc=new Imc(80,1.67f);
+        //Imc imc1=new Imc(80,1.67f);
+        Imc imc=new Imc();
         System.out.println(imc.calcular()); 
         
     }
