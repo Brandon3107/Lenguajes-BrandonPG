@@ -11,8 +11,8 @@ package lenguajes;
  */
 public class Imc {
     
-    private float peso;
-    private float altura;
+    private static float peso;
+    private static float altura;
     
     /*public Imc(float a, float b){
         
@@ -20,23 +20,23 @@ public class Imc {
         altura=1.68f;
         
     }*/
-    public String calcular(){
+    public static String calcular(){
         
         float imc=peso/(altura*altura);
-        return "Tu IMC es: "+imc;
+        return ("Tu IMC es: "+imc);
         
     }
     public Imc(){
         
     }
-    public void setPeso(float x){
+    public static void setPeso(float x){
         
-        this.peso=x;
+        peso=x;
         
     }
-    public void setAltura(float y){
+    public static void setAltura(float y){
         
-        this.altura=y;
+        altura=y;
         
     }
     public float getPeso(){
