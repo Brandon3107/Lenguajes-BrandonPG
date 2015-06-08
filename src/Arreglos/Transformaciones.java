@@ -1,33 +1,51 @@
 package Arreglos;
 
+import java.math.BigInteger;
+
 public class Transformaciones {
     
-    Ejercicio nunu=new Ejercicio();
-    
     String letra;
-    byte xy;
-    byte z[];
-    int aaa;
+    String numero;
+    int z[];
+    byte letnum[],numlet[];
     
 
     public void setLetra(String y){
         this.letra=y;
     }
     
-    public void setNumero(byte y){
-        this.xy=y;
+    public void setNumero(String y){
+        this.numero=y;
     }
     
     public String getNumero(){
-        byte letnum[]=letra.getBytes();
-        this.aaa=letnum.length;
-        for(int h=0;h<aaa;h++){
-        z=letnum;
+        this.letnum=letra.getBytes();
+        StringBuilder letranumero=new StringBuilder();
+        for(byte m:letnum){
+            letranumero.append(m);
+            letranumero.append(" ");
         }
-        return (""+z[0]);
+        return (""+letranumero.toString());
     }
     
     public String getLetra(){
-        return (""+(char)xy);
+        this.numlet=numero.getBytes();
+        StringBuilder xyz=new StringBuilder();
+        StringBuilder numeroletra=new StringBuilder();
+        byte zyx;
+        for(byte m:numlet){
+            if(m!=32){
+                xyz.append((char)m);
+                
+            }else{
+                Byte ascii=new Byte(xyz.toString());
+                char b=(char)ascii.byteValue();
+                xyz.delete(0, xyz.length());
+                numeroletra.append(b);
+                numeroletra.append(" ");
+            }
+        }
+        return (""+numeroletra.toString());
+        //return (""+(char)xy);
     }
 }

@@ -128,17 +128,14 @@ public class Ejercicio extends javax.swing.JFrame {
     private void Transformar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Transformar1ActionPerformed
         Transformaciones x=new Transformaciones();
         x.setLetra(TextoANumero.getText());
-        //for(int l=0;l<x.aaa;l++){
-            Etiqueta1.setText(x.getNumero()+"");
-        //}
-        
+        Etiqueta1.setText(x.getNumero()+"");
         
     }//GEN-LAST:event_Transformar1ActionPerformed
 
     private void Transformar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Transformar2ActionPerformed
         Transformaciones y=new Transformaciones();
-        int xyz=Integer.parseInt(Etiqueta1.getText());
-        y.setNumero((byte)xyz); 
+        String xyz=Etiqueta1.getText();
+        y.setNumero(xyz); 
         Etiqueta2.setText(y.getLetra());
     }//GEN-LAST:event_Transformar2ActionPerformed
 
