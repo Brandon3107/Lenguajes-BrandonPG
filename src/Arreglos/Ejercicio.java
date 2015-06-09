@@ -86,9 +86,9 @@ public class Ejercicio extends javax.swing.JFrame {
                 .addContainerGap(121, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(172, 172, 172)
-                    .addComponent(Etiqueta1, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(210, Short.MAX_VALUE)))
+                    .addGap(46, 46, 46)
+                    .addComponent(Etiqueta1, javax.swing.GroupLayout.PREFERRED_SIZE, 599, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(108, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -134,7 +134,7 @@ public class Ejercicio extends javax.swing.JFrame {
 
     private void Transformar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Transformar2ActionPerformed
         Transformaciones y=new Transformaciones();
-        String xyz=Etiqueta1.getText();
+        String xyz=Etiqueta2.getText();
         y.setNumero(xyz); 
         Etiqueta2.setText(y.getLetra());
     }//GEN-LAST:event_Transformar2ActionPerformed

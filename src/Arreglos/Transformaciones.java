@@ -42,7 +42,7 @@ public class Transformaciones {
                 char b=(char)ascii.byteValue();
                 xyz.delete(0, xyz.length());
                 numeroletra.append(b);
-                numeroletra.append(" ");
+                //numeroletra.append(" ");
             }
         }
         return (""+numeroletra.toString());
