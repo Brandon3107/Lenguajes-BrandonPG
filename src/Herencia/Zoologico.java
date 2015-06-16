@@ -16,8 +16,7 @@ public class Zoologico {
         Aguila animal4=new Aguila();
         animal2.setNombre("America");
         animal2.setEdad(38);
-        
-        System.err.println(Tortuga.class.getInterfaces());
+
     }
     
 }
