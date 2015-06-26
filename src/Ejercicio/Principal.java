@@ -18,6 +18,14 @@ public class Principal {
         System.out.println("Email: "+usu.getEmail());
         System.out.println("Municipio: "+usu.getDireccion().getMunicipio());
         System.out.println("CP: "+usu.getDireccion().getCp());
+        
+        Bebida b=new Bebida();
+        
+        b.setTipo("Alcoholicas");
+        String recomendaciones[]=b.ObtenerRecomendaciones();
+        for(String be:recomendaciones){
+            System.out.println(be);
+        }
     }
     
 }
