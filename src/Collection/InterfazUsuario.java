@@ -21,7 +21,9 @@ public class InterfazUsuario extends javax.swing.JFrame {
      * Creates new form InterfazUsuario
      */
     public InterfazUsuario() {
+        
         initComponents();
+        ChecarBoton.setEnabled(false);
     }
 
     /**
@@ -47,6 +49,8 @@ public class InterfazUsuario extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         UsuariosTabla = new javax.swing.JTable();
         ChecarBoton = new javax.swing.JButton();
+        OrdenarCombo = new javax.swing.JComboBox();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -157,17 +161,35 @@ public class InterfazUsuario extends javax.swing.JFrame {
             }
         });
 
+        OrdenarCombo.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        OrdenarCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "Nombre", "Edad", "Email" }));
+        OrdenarCombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OrdenarComboActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel4.setText("Ordenar por:");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap(134, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(126, 126, 126))
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(296, 296, 296)
-                .addComponent(ChecarBoton)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(313, 313, 313)
+                        .addComponent(ChecarBoton))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(268, 268, 268)
+                        .addComponent(jLabel4)
+                        .addGap(18, 18, 18)
+                        .addComponent(OrdenarCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -175,9 +197,13 @@ public class InterfazUsuario extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(OrdenarCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addGap(11, 11, 11)
                 .addComponent(ChecarBoton)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         AgragarUsuarioTabbed.addTab("Verificar Usuarios", jPanel2);
@@ -230,7 +256,17 @@ public class InterfazUsuario extends javax.swing.JFrame {
         GeneradorDeUsuarios gdu=new GeneradorDeUsuarios();
         //ArrayList<Usuario> usuarios=(ArrayList<Usuario>) gdu.getUsuarios();
         List<Usuario> usuarios=gdu.getUsuarios();
-        Collections.sort(usuarios, new UsuarioPorNombre());
+        if(OrdenarCombo.getSelectedIndex()==1){
+            Collections.sort(usuarios, new UsuarioPorNombre());
+        }else{
+            if(OrdenarCombo.getSelectedIndex()==2){
+                Collections.sort(usuarios, new UsuarioPorEdad());
+            }else{
+                if(OrdenarCombo.getSelectedIndex()==3){
+                    Collections.sort(usuarios, new UsuarioPorEmail());
+                }
+            }
+        }
         UsuariosTabla.setModel(new DefaultTableModel(new String[]{"Nombre","Edad","Email"}, usuarios.size()));
         int fila=0;
         for(Usuario x:gdu.getUsuarios()){
@@ -240,6 +276,12 @@ public class InterfazUsuario extends javax.swing.JFrame {
             fila++;
         }
     }//GEN-LAST:event_ChecarBotonActionPerformed
+
+    private void OrdenarComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrdenarComboActionPerformed
+        if(OrdenarCombo.getSelectedIndex()!=0){
+            ChecarBoton.setEnabled(true);
+        }
+    }//GEN-LAST:event_OrdenarComboActionPerformed
 
     /**
      * @param args the command line arguments
@@ -283,11 +325,13 @@ public class InterfazUsuario extends javax.swing.JFrame {
     private javax.swing.JComboBox EdadCombo;
     private javax.swing.JTextField EmailText;
     private javax.swing.JTextField NombreText;
+    private javax.swing.JComboBox OrdenarCombo;
     private javax.swing.JLabel ResultadoLabel;
     private javax.swing.JTable UsuariosTabla;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
