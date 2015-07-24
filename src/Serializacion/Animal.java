@@ -7,6 +7,14 @@ public class Animal implements Serializable{
     private String nombre;
     private boolean carnivoro;
 
+    public Animal(String nombre, boolean carnivoro) {
+        this.nombre = nombre;
+        this.carnivoro = carnivoro;
+    }
+    
+    public Animal() {
+    }
+
     public String getNombre() {
         return nombre;
     }

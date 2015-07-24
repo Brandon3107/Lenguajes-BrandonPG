@@ -3,12 +3,14 @@ package Serializacion;
 import java.io.*;
 import java.util.ArrayList;
 
-public class ModeloPersistenciaAnimal {
+public class ModeloPersistenciaAnimales {
     
-    String ruta="D:\\animalitos.xxx";
+    String ruta="D:\\animales.xxx";
+    String rutanimales;
+    Animal animal;
     ArrayList<Animal> animales;
 
-    public ModeloPersistenciaAnimal() {
+    public ModeloPersistenciaAnimales() {
         this.animales = new ArrayList<Animal>();
     }
     
@@ -25,6 +27,10 @@ public class ModeloPersistenciaAnimal {
         ObjectOutputStream oos=new ObjectOutputStream(fos);
         animales.add(animal);
         oos.writeObject(animales);
+        File file2=new File(rutanimales);
+        FileOutputStream fos2=new FileOutputStream(file2);
+        ObjectOutputStream oos2=new ObjectOutputStream(fos2);
+        oos.writeObject(animal);
         System.out.println("Animalito Comprimido con Exito");
         
     }
