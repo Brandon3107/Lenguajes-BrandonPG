@@ -18,8 +18,33 @@ public class ThreadInterfaz extends javax.swing.JFrame {
     /**
      * Creates new form ThreadInterfaz
      */
+    
     public ThreadInterfaz() {
+        
         initComponents();
+        Thread t1=new Thread(new Runnable() {
+            public void run() {
+                while(true){
+                    try{
+                        Thread.sleep(1000);
+                        Calendar c=Calendar.getInstance();
+                        int hrs=c.get(Calendar.HOUR);
+                        int min=c.get(Calendar.MINUTE);
+                        int seg=c.get(Calendar.SECOND);
+                        int mil=c.get(Calendar.MILLISECOND);
+                        HoraEtiqueta2.setText(hrs+"");
+                        //System.out.println(hrs+"");
+                        MinutosEtiqueta.setText(min+"");
+                        SegundosEtiqueta.setText(seg+"");
+                        if((hrs==6)&&(min==58))dispose();
+                    }catch(Exception e){
+                
+                    }
+                }
+            }
+        });
+        t1.start();
+
     }
 
     /**
@@ -131,29 +156,12 @@ public class ThreadInterfaz extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new ThreadInterfaz().setVisible(true);
-                while(true){
-                try{
-                Thread.sleep(1000);
-                Calendar c=Calendar.getInstance();
-                int hrs=c.get(Calendar.HOUR);
-                int min=c.get(Calendar.MINUTE);
-                int seg=c.get(Calendar.SECOND);
-                ThreadInterfaz ti=new ThreadInterfaz();
-                ti.x(hrs, min, seg);
-                }catch(Exception e){
-                    
-                }
-                }
+                
                 
             }
         });
     }
-    public void x(int hrs, int min, int seg){
-        HoraEtiqueta2.setText(hrs+"");
-        //System.out.println(hrs+"");
-        MinutosEtiqueta.setText(min+"");
-        SegundosEtiqueta.setText(seg+"");
-    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel HoraEtiqueta2;
