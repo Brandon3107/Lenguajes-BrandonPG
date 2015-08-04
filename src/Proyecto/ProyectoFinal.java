@@ -34,7 +34,7 @@ public class ProyectoFinal extends javax.swing.JFrame {
 
                 public void mouseClicked(MouseEvent e) {
                     //jLabel1.setText(e.getComponent().getName());
-                    ImageIcon icon=new ImageIcon("D:\\DESCARGAS\\Dino3.png");
+                    ImageIcon icon=new ImageIcon("D:\\DESCARGAS\\Dino2.png");
                     int alto=icon.getIconHeight();
                     int ancho=icon.getIconWidth();
                     jLabel1.setSize(alto, ancho);
