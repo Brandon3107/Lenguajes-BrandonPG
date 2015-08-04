@@ -5,11 +5,13 @@
  */
 package Proyecto;
 
+import java.awt.Component;
+import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.image.ImageObserver;
+import java.awt.image.ImageProducer;
 import java.io.File;
-import javax.swing.Icon;
-import javax.swing.JFileChooser;
-import javax.swing.plaf.IconUIResource;
+import javax.swing.*;
 
 /**
  *
@@ -101,11 +103,14 @@ public class Proyecto extends javax.swing.JFrame {
         JFileChooser selector=new JFileChooser();
         selector.showOpenDialog(this);
         File archivo=selector.getSelectedFile();
-        //jLabel2.setText(archivo.getAbsolutePath());
+        jLabel2.setText(archivo.getAbsolutePath());
+        String url=archivo.getAbsolutePath();
         Icon icono=(Icon) archivo.getAbsoluteFile();
-        Image imagen;
-
-        jLabel2.setIcon(icono);
+        ImageIcon icon=new ImageIcon(url);
+        jLabel1.setIcon((Icon) icon.getImage());
+        //jLabel2.setIcon(icono);
+        Image i;
+        i=icon.getImage();
         
     }//GEN-LAST:event_Imagen1BotonActionPerformed
 
