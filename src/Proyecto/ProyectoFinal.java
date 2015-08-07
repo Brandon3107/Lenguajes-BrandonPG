@@ -23,7 +23,7 @@ public class ProyectoFinal extends javax.swing.JFrame {
     int piezarr[]=new int[12];
     Random r=new Random();
     int par=0;
-    int pares[]=new int[2];
+    int pares[]=new int[4];
     
 
     public ProyectoFinal() {
@@ -55,15 +55,19 @@ public class ProyectoFinal extends javax.swing.JFrame {
             }
         }
         for(int i:piezas){
-            imagenes[valor]=new JLabel("Pieza "+(valor+1));
+            imagenes[valor]=new JLabel();
+            ImageIcon iconx=new ImageIcon("src/Proyecto/yugioh3.png");
+            
+            imagenes[valor].setIcon(iconx);
             imagenes[valor].setName(""+valor);
-            imagenes[valor].setSize(100, 100);
+            imagenes[valor].setSize(500, 500);
             Integer inte=new Integer(imagenes[valor].getName());
             jPanel1.add(imagenes[valor]);
             imagenes[valor].addMouseListener(new MouseListener() {
 
                 public void mouseClicked(MouseEvent e) {
                     //jLabel1.setText(e.getComponent().getName());
+                    ImageIcon icon0=new ImageIcon("src/Proyecto/yugioh3.png");
                     ImageIcon icon1=new ImageIcon("src/Proyecto/Dino1.png");
                     ImageIcon icon2=new ImageIcon("src/Proyecto/Dino2.png");
                     ImageIcon icon3=new ImageIcon("src/Proyecto/Dino3.png");
@@ -76,35 +80,162 @@ public class ProyectoFinal extends javax.swing.JFrame {
                         par++;
                         if(par==1){
                             pares[0]=piezarr[inte];
+                            Integer paresx=new Integer(imagenes[inte].getName());
+                            pares[1]=paresx;
                         }
                         if(par==2){
-                            
+                            pares[2]=piezarr[inte];
+                            Integer paresy=new Integer(imagenes[inte].getName());
+                            pares[3]=paresy;
                         }
+                        if(par==3){
+                            if(pares[0]!=pares[2]){
+                                imagenes[pares[1]].setIcon(icon0);
+                                imagenes[pares[3]].setIcon(icon0);
+                                //imagenes[pares[1]].setText(""+pares[1]);
+                                //imagenes[pares[3]].setText(""+pares[3]);
+                            }
+                            par=1;
+                            pares[0]=piezarr[inte];
+                            Integer paresz=new Integer(imagenes[inte].getName());
+                            pares[1]=paresz;
+                        }
+                        
                     }
                     if(piezarr[inte]==2){
                         imagenes[inte].setIcon(icon2);
                         imagenes[inte].setText(null);
                         par++;
+                        if(par==1){
+                            pares[0]=piezarr[inte];
+                            Integer paresx=new Integer(imagenes[inte].getName());
+                            pares[1]=paresx;
+                        }
+                        if(par==2){
+                            pares[2]=piezarr[inte];
+                            Integer paresy=new Integer(imagenes[inte].getName());
+                            pares[3]=paresy;
+                        }
+                        if(par==3){
+                            if(pares[0]!=pares[2]){
+                                imagenes[pares[1]].setIcon(icon0);
+                                imagenes[pares[3]].setIcon(icon0);
+                                //imagenes[pares[1]].setText(""+pares[1]);
+                                //imagenes[pares[3]].setText(""+pares[3]);
+                            }
+                            par=1;
+                            pares[0]=piezarr[inte];
+                            Integer paresz=new Integer(imagenes[inte].getName());
+                            pares[1]=paresz;
+                        }
                     }
                     if(piezarr[inte]==3){
                         imagenes[inte].setIcon(icon3);
                         imagenes[inte].setText(null);
                         par++;
+                        if(par==1){
+                            pares[0]=piezarr[inte];
+                            Integer paresx=new Integer(imagenes[inte].getName());
+                            pares[1]=paresx;
+                        }
+                        if(par==2){
+                            pares[2]=piezarr[inte];
+                            Integer paresy=new Integer(imagenes[inte].getName());
+                            pares[3]=paresy;
+                        }
+                        if(par==3){
+                            if(pares[0]!=pares[2]){
+                                imagenes[pares[1]].setIcon(icon0);
+                                imagenes[pares[3]].setIcon(icon0);
+                                //imagenes[pares[1]].setText(""+pares[1]);
+                                //imagenes[pares[3]].setText(""+pares[3]);
+                            }
+                            par=1;
+                            pares[0]=piezarr[inte];
+                            Integer paresz=new Integer(imagenes[inte].getName());
+                            pares[1]=paresz;
+                        }
                     }
                     if(piezarr[inte]==4){
                         imagenes[inte].setIcon(icon4);
                         imagenes[inte].setText(null);
                         par++;
+                        if(par==1){
+                            pares[0]=piezarr[inte];
+                            Integer paresx=new Integer(imagenes[inte].getName());
+                            pares[1]=paresx;
+                        }
+                        if(par==2){
+                            pares[2]=piezarr[inte];
+                            Integer paresy=new Integer(imagenes[inte].getName());
+                            pares[3]=paresy;
+                        }
+                        if(par==3){
+                            if(pares[0]!=pares[2]){
+                                imagenes[pares[1]].setIcon(icon0);
+                                imagenes[pares[3]].setIcon(icon0);
+                                //imagenes[pares[1]].setText(""+pares[1]);
+                                //imagenes[pares[3]].setText(""+pares[3]);
+                            }
+                            par=1;
+                            pares[0]=piezarr[inte];
+                            Integer paresz=new Integer(imagenes[inte].getName());
+                            pares[1]=paresz;
+                        }
                     }
                     if(piezarr[inte]==5){
                         imagenes[inte].setIcon(icon5);
                         imagenes[inte].setText(null);
                         par++;
+                        if(par==1){
+                            pares[0]=piezarr[inte];
+                            Integer paresx=new Integer(imagenes[inte].getName());
+                            pares[1]=paresx;
+                        }
+                        if(par==2){
+                            pares[2]=piezarr[inte];
+                            Integer paresy=new Integer(imagenes[inte].getName());
+                            pares[3]=paresy;
+                        }
+                        if(par==3){
+                            if(pares[0]!=pares[2]){
+                                imagenes[pares[1]].setIcon(icon0);
+                                imagenes[pares[3]].setIcon(icon0);
+                                //imagenes[pares[1]].setText(""+pares[1]);
+                                //imagenes[pares[3]].setText(""+pares[3]);
+                            }
+                            par=1;
+                            pares[0]=piezarr[inte];
+                            Integer paresz=new Integer(imagenes[inte].getName());
+                            pares[1]=paresz;
+                        }
                     }
                     if(piezarr[inte]==6){
                         imagenes[inte].setIcon(icon6);
                         imagenes[inte].setText(null);
                         par++;
+                        if(par==1){
+                            pares[0]=piezarr[inte];
+                            Integer paresx=new Integer(imagenes[inte].getName());
+                            pares[1]=paresx;
+                        }
+                        if(par==2){
+                            pares[2]=piezarr[inte];
+                            Integer paresy=new Integer(imagenes[inte].getName());
+                            pares[3]=paresy;
+                        }
+                        if(par==3){
+                            if(pares[0]!=pares[2]){
+                                imagenes[pares[1]].setIcon(icon0);
+                                imagenes[pares[3]].setIcon(icon0);
+                                //imagenes[pares[1]].setText(""+pares[1]);
+                                //imagenes[pares[3]].setText(""+pares[3]);
+                            }
+                            par=1;
+                            pares[0]=piezarr[inte];
+                            Integer paresz=new Integer(imagenes[inte].getName());
+                            pares[1]=paresz;
+                        }
                     }
                     //imagenes[inte].setIcon(icon);
                     //imagenes[inte].setText(null);
@@ -152,7 +283,7 @@ public class ProyectoFinal extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 255));
         jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.setPreferredSize(new java.awt.Dimension(384, 384));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1200, 1740));
         jPanel1.setLayout(new java.awt.GridLayout(4, 3));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -171,12 +302,9 @@ public class ProyectoFinal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(30, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
